@@ -5,13 +5,12 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "*" ]
+    branches: ['*']
   pull_request:
-    branches: [ "*" ]
+    branches: ['*']
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -20,16 +19,21 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v7.0.1
+      - uses: actions/checkout@v7.0.1
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v7.0.0
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4.1.0
+        with:
+          version: 12.6.0
 
-    - run: npm ci
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v7.0.0
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
 
-    - run: npm run build --if-present
+      - run: pnpm install --frozen-lockfile
 
-    - run: npm test -- --run
+      - run: pnpm run build
+
+      - run: pnpm exec ng test --watch=false
