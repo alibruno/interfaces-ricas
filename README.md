@@ -1,33 +1,59 @@
-# TypeScript Example
+# ProjetoAngular
 
-[![License](https://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)  
-[![Build Status](https://github.com/persapiens-classes/ifrn-ria-example/actions/workflows/node.yml/badge.svg)](https://github.com/persapiens-classes/ifrn-ria-example/actions)
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.0.
 
-This is the **pedagogical example application** developed for the course:
+## Development server
 
-### [Applications with Rich Interfaces](https://github.com/persapiens-classes/ifrn-ria)
+To start a local development server, run:
 
-Offered in the **Bachelor of Technology in Analysis and Systems Development (TADS)** at the:
+```bash
+ng serve
+```
 
-- [Academic Directorate of Information and Technology Management (DIATINF)](https://diatinf.ifrn.edu.br)  
-- [Campus Natal Central (CNAT)](https://portal.ifrn.edu.br/campus/natalcentral)  
-- [Federal Institute of Rio Grande do Norte (IFRN)](https://portal.ifrn.edu.br/)
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
----
+## Code scaffolding
 
-## 🧪 About the Project
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-This repository contains the source code to create unit tests in [typescript](https://www.typescriptlang.org/) using [vitest](https://vitest.dev/).
+```bash
+ng generate component component-name
+```
 
----
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-## 📚 Related Resources
+```bash
+ng generate --help
+```
 
-- 📘 [Course GitHub Repository](https://github.com/persapiens-classes/ifrn-ria)  
-- 🌐 [TADS Course Website (IFRN)](https://sites.google.com/escolar.ifrn.edu.br/diatinf/cursos/superiores/an%C3%A1lise-e-desenvolvimento-de-sistemas?authuser=0)
+## Building
 
----
+To build the project run:
 
-## 📄 License
+```bash
+ng build
+```
 
-This project is licensed under the [Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0.html).
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+
+## Running unit tests
+
+To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+
+```bash
+ng test
+```
+
+## Running end-to-end tests
+
+For end-to-end (e2e) testing, run:
+
+```bash
+ng e2e
+```
+
+Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+
+## Additional Resources
+
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
