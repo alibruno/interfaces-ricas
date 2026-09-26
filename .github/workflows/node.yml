@@ -24,14 +24,19 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v6.1.0
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v7.0.0
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'pnpm'
+    - name: Install pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 9
 
-      - run: pnpm install --frozen-lockfile
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v7.0.0
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'pnpm'
 
-      - run: pnpm run build
+    - run: pnpm install --frozen-lockfile
 
-      - run: pnpm exec ng test --watch=false
+    - run: pnpm run build --if-present
+
+    - run: pnpm test -- --run
