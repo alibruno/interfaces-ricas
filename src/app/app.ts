@@ -1,10 +1,10 @@
 import { Component, signal, computed } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { Button } from '@openng/optimus-ui/button';
+import { Button, ButtonModule } from '@openng/optimus-ui/button';
 
 @Component({
-  imports: [RouterOutlet, FormsModule, Button],
+  imports: [RouterOutlet, FormsModule, Button, ButtonModule],
   selector: 'app-root',
   // styleUrl: './app.css',
   // templateUrl: './app.html',
@@ -32,6 +32,15 @@ import { Button } from '@openng/optimus-ui/button';
 
     <p-button label="Botão optimus" />
 
+    <hr />
+    <div class="card flex justify-center gap-4">
+      <p-button label="Search" icon="pi pi-check" [loading]="loading()" (onClick)="load()" />
+    </div>
+
+    <hr />
+
+    <p-button label="Toggle Dark Mode" (onClick)="toggleDarkMode()" />
+
     <p>Hello, {{ nomeUsuario() }}!</p>
     <div class="w-full max-w-sm min-w-50">
       <input
@@ -44,6 +53,7 @@ import { Button } from '@openng/optimus-ui/button';
 
     <router-outlet />
   `,
+  //standalone: true,
 })
 export class App {
   protected readonly title = signal<string>('World');
@@ -61,6 +71,25 @@ export class App {
   protected decrementar(): void {
     if (this.contador() > 0) {
       this.contador.update((valor) => valor - 1);
+    }
+  }
+
+  loading = signal(false);
+
+  load() {
+    this.loading.set(true);
+
+    setTimeout(() => {
+      this.loading.set(false);
+    }, 2000);
+  }
+
+  toggleDarkMode() {
+    const element = document.querySelector('html');
+    if (element == null) {
+      return;
+    } else{
+      element.classList.toggle('my-app-dark');
     }
   }
 }

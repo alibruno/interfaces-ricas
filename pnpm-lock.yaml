@@ -184,9 +184,15 @@ importers:
       '@angular/router':
         specifier: ^22.2.0
         version: 22.2.0(@angular/common@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2))(@angular/platform-browser@22.2.0(@angular/common@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)))(rxjs@7.8.2)
+      '@openng/icons':
+        specifier: ^1.0.0
+        version: 1.0.0
       '@openng/optimus-ui':
         specifier: ^2.0.2
         version: 2.0.2(2484a23aa22e16b851b197caeaff3ec4)
+      '@openng/optimus-ui-tailwindcss':
+        specifier: ^2.0.2
+        version: 2.0.2(tailwindcss@4.3.3)
       '@openng/optimus-ui-themes':
         specifier: ^2.0.2
         version: 2.0.2
@@ -1012,6 +1018,9 @@ packages:
     resolution: {integrity: sha512-xJIPs+bYuc9ASBl+cvGsKbGrJmS6fAKaSZCnT0lhahT5rhA2VVy9/EcIgd2JhtEuFOJNx7UHNn/qiTPTY4nrQw==}
     engines: {node: '>= 10'}
 
+  '@openng/icons@1.0.0':
+    resolution: {integrity: sha512-BdTSHu74S3WRfbmfoT2WfmvaM3Ei32K3WiZBJTw7nVTlCvQbpCNsBqzrD5rAe4nb5IoTPjeuRb5WTG2gzrTQtw==}
+
   '@openng/optimus-ui-motion@2.0.2':
     resolution: {integrity: sha512-sh3I8xYK1A+BZEqpPgPl6MaRVPJrHNbiC6hzkUXsaNhk4Uu6dEj7KEsGh89vYtFmYN6PUeR9+XnYau/k5/q45g==}
     engines: {node: '>=12.11.0'}
@@ -1022,6 +1031,11 @@ packages:
 
   '@openng/optimus-ui-styles@2.0.2':
     resolution: {integrity: sha512-2tOozv8KcBRynUeZ1LvEiqO3YrK4mARszXXJh6LhUujSVq7QGVtNiNu2dktW4t4EpNTXWQNILpqLL+CyA/QLVg==}
+
+  '@openng/optimus-ui-tailwindcss@2.0.2':
+    resolution: {integrity: sha512-JxUZ5unbEhj0meCza+jNdK/2AcI2j8iApwJsEeR1IRvmjKvphfhiD6TPj0y2EKJ7XOBXJP4T7hEcOpvxqLVTOg==}
+    peerDependencies:
+      tailwindcss: '>=3.1.0'
 
   '@openng/optimus-ui-themes@2.0.2':
     resolution: {integrity: sha512-nEQb83g8pssx5dJM+31sUEKwPjDX9OGZMyRoln2cvPQl7eHbFkafjgDNBL5oMHdnFVRQofmoJXgdC7sWn6XxbA==}
@@ -3183,6 +3197,8 @@ snapshots:
       '@napi-rs/nice-win32-x64-msvc': 1.1.1
     optional: true
 
+  '@openng/icons@1.0.0': {}
+
   '@openng/optimus-ui-motion@2.0.2':
     dependencies:
       '@openng/optimus-ui-utils': 2.0.2
@@ -3194,6 +3210,10 @@ snapshots:
   '@openng/optimus-ui-styles@2.0.2':
     dependencies:
       '@openng/optimus-ui-styled': 2.0.2
+
+  '@openng/optimus-ui-tailwindcss@2.0.2(tailwindcss@4.3.3)':
+    dependencies:
+      tailwindcss: 4.3.3
 
   '@openng/optimus-ui-themes@2.0.2':
     dependencies:
